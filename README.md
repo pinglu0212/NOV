@@ -14,7 +14,7 @@ This is the Rig Analytics code challenge at NOV.
 
 * You can run each cell by clicking on the "Run" button in the header.
  
-* When you are done and close out jupyter, you can deactivate the current environment
+* When you are done and close out jupyter, you can deactivate the current environment with:
 source deactivate
 
 * You can find more info on conda here: http://conda.pydata.org/docs/using/pkgs.html
@@ -23,12 +23,13 @@ source deactivate
 ## Description of the problem
 We have 5000 customer appointments and 150 tellers. We want to assign all the 5000 appointments to these 150 tellers. We want to create such a balanced schedule that the maximum duration of the tellers' total service time is minimized. In other words, we want all the 5000 jobs done as quickly as possible, but in a very balanced way such that the duration of all appointments for the teller with the longest total duration is minimized. (We want to keep in mind that when a customer's service type matches the specialty type of the assigned teller, the multiplier of the teller will be multiplied against the customer's appointment duration to reduce the appointment time. Also note that we can't consider only assigning matched customer appointment to the matched SpecialtyType tellers. Because some type of appointments are very few and short. We might end up with some specialty tellers not having enough to do while others being too busy, if we only consider let the professionals do their own specialty work.)
 
-## Steps of the solution and reasoning
+## Steps of the Solution and Reasoning
 ### 1. Data Exploration - Getting Basic Statistics of the Dataset
-Number of Customer Appointments: 5000; Type 1; Type 2; Type 3; Type 4;
-Number of Tellers: 149; Specialty 1 #: 29; Specialty 2 #: 50; Specialty 3 #: 50; Specialty 0 #: 20.
+* Number of Customer Appointments: 5000; Type 1; Type 2; Type 3; Type 4;
 
-### 2. Estimate the duration needed for each teller category and pick the SpecialtyType with minimum time.
+* Number of Tellers: 149; Specialty 1 #: 29; Specialty 2 #: 50; Specialty 3 #: 50; Specialty 0 #: 20.
+
+### 2. Estimate the Duration Needed for Each Teller Category and Pick the SpecialtyType with Minimum Time.
 Given Customer appointment and Teller information, estimate how much time each teller will spend on average in each category if each teller will only service customer appointments that are a match of their own specialty. Here we begin by categorizing Teller Specialty 0 as "unmatched", and Customer Type 4 as "unmatched" as well. The multipliers for "unmatched" tellers are always 1. Tellers of SpecialtyType "unmatched" will service "unmatched" type of customer appointments, and tellers of SpecialtyType "1" will service customer appointments type of "1" etc. This function is implemented in function def estimate_time_of_a_type(customer_info, teller_info). We return the SpecialtyType with the minimum duration among all the SpecialtyTypes, and get that minimum duration as well.
 
 Reasoning for this estimation:

@@ -24,6 +24,8 @@ This is the Rig Analytics code challenge at NOV.
 We have 5000 customer appointments and 150 tellers. We want to assign all the 5000 appointments to these 150 tellers. We want to create such a balanced schedule that the maximum duration of the tellers' total service time is minimized. In other words, we want all the 5000 jobs done as quickly as possible, but in a very balanced way such that the duration of all appointments for the teller with the longest total duration is minimized. (We want to keep in mind that when a customer's service type matches the specialty type of the assigned teller, the multiplier of the teller will be multiplied against the customer's appointment duration to reduce the appointment time. Also note that we can't consider only assigning matched customer appointment to the matched SpecialtyType tellers. Because some type of appointments are very few and short. We might end up with some specialty tellers not having enough to do while others being too busy, if we only consider let the professionals do their own specialty work.)
 
 ## Steps of the solution and reasoning
+It is illustrated in Workflow 1.jpeg and Workflow 2.jpeg how the matching game would play out in the iterations below.
+
 ### 1. Data Exploration - Getting Basic Statistics of the Dataset
 Number of Customer Appointments: 5000; Type 1; Type 2; Type 3; Type 4;
 Number of Tellers: 149; Specialty 1 #: 29; Specialty 2 #: 50; Specialty 3 #: 50; Specialty 0 #: 20.

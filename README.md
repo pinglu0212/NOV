@@ -53,7 +53,7 @@ If we just finished matching all customers in a category that's in the "unmatche
 If we have any customers left in the customer_info dict, we are not done with the assignment yet. Otherwise, we terminate the iteration and generate the results.
 
 ### 5. Generate the Results with Graphs and Scheduler Files.
-For the finalized schedule, the maximum duration of all tellers is 498.75 min.
+For the finalized schedule, the maximum duration of all tellers is 480 min.
 The customers_match.csv includes all customers' appointment information.
 The tellers_match.csv includes all tellers' appointment information.
 
